@@ -19,7 +19,7 @@
   * 
 */
 
-package eu.learnpad.monitoring.consumer;
+package eu.learnpad.monitoring.glimpse.consumer;
 
 import it.cnr.isti.labse.glimpse.xml.complexEventRule.ComplexEventRuleActionListDocument;
 
@@ -42,9 +42,9 @@ import javax.naming.NamingException;
 
 import org.apache.xmlbeans.XmlException;
 
-import eu.learnpad.monitoring.exceptions.IncorrectRuleFormatException;
-import eu.learnpad.monitoring.utils.DebugMessages;
-import eu.learnpad.monitoring.utils.Manager;
+import eu.learnpad.monitoring.glimpse.exceptions.IncorrectRuleFormatException;
+import eu.learnpad.monitoring.glimpse.utils.DebugMessages;
+import eu.learnpad.monitoring.glimpse.utils.Manager;
 
 /**
  *

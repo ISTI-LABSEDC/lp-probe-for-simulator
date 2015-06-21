@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.utils;
+package eu.learnpad.monitoring.glimpse.utils;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
@@ -7,8 +7,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-import eu.learnpad.monitoring.consumer.GlimpseAbstractConsumer;
-import eu.learnpad.monitoring.probe.GlimpseAbstractProbe;
+import eu.learnpad.monitoring.glimpse.consumer.GlimpseAbstractConsumer;
+import eu.learnpad.monitoring.glimpse.probe.GlimpseAbstractProbe;
 
 /**
  * This class should be used only for debug purpose<br />

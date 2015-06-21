@@ -1,6 +1,6 @@
-package eu.learnpad.monitoring.event;
+package eu.learnpad.monitoring.glimpse.event;
 
-import eu.learnpad.monitoring.event.GlimpseBaseEventGeneric;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventGeneric;
 
 public class GlimpseBaseEventBPMN<T> extends GlimpseBaseEventGeneric<String> {
 

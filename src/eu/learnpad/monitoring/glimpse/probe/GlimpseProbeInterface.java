@@ -18,25 +18,21 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   * 
 */
+package eu.learnpad.monitoring.glimpse.probe;
 
-package eu.learnpad.monitoring.exceptions;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
 
 /**
- * This exception will be thrown when the Monitoring Manager<br />
- * is unable to complete the request of unloading a rule.
  * 
- * @author Antonello Calabr&ograve;
- * @version 3.2
+ * The interface {@link GlimpseProbeInterface} contains the event that a generic probe<br />
+ * must implement to generate events.
+ * 
+ *  The behaviour of a Probe is defined in {@link GlimpseProbe}
+ * 
+ * @author acalabro
+ *
  */
+public interface GlimpseProbeInterface {
 
-public class UnknownRuleException extends Exception {
-
-	private static final long serialVersionUID = -8325934056030280854L;
-
-	public UnknownRuleException()
-	{
-		System.out.println("Unable to found a rule with provided ruleName");
-	}
-	
-	
+	public void sendMessage(GlimpseBaseEvent<?> event, boolean debug);
 }

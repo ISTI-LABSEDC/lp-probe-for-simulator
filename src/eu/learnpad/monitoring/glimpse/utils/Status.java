@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.utils;
+package eu.learnpad.monitoring.glimpse.utils;
 
 /**
  * This class is used to get the Monitoring Engine status.

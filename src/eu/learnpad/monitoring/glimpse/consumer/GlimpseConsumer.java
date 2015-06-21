@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.consumer;
+package eu.learnpad.monitoring.glimpse.consumer;
 
 import javax.jms.JMSException;
 import javax.jms.MessageListener;
@@ -8,8 +8,8 @@ import javax.jms.TopicSession;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import eu.learnpad.monitoring.example.MyGlimpseConsumer;
-import eu.learnpad.monitoring.utils.Status;
+import eu.learnpad.monitoring.glimpse.example.MyGlimpseConsumer;
+import eu.learnpad.monitoring.glimpse.utils.Status;
 import it.cnr.isti.labse.glimpse.xml.complexEventRule.ComplexEventRuleActionListDocument;
 
 

@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.event;
+package eu.learnpad.monitoring.glimpse.event;
 
 public class GlimpseBaseEventChoreos<T> extends GlimpseBaseEventAbstract<T> {
 

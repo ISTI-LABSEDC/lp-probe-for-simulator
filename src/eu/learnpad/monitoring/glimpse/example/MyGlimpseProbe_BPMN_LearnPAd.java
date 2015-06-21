@@ -20,7 +20,7 @@
   * 
 */
 
-package eu.learnpad.monitoring.example;
+package eu.learnpad.monitoring.glimpse.example;
 
 import java.net.UnknownHostException;
 import java.util.Properties;
@@ -28,11 +28,11 @@ import java.util.Properties;
 import javax.jms.JMSException;
 import javax.naming.NamingException;
 
-import eu.learnpad.monitoring.event.GlimpseBaseEvent;
-import eu.learnpad.monitoring.event.GlimpseBaseEventBPMN;
-import eu.learnpad.monitoring.probe.GlimpseAbstractProbe;
-import eu.learnpad.monitoring.utils.DebugMessages;
-import eu.learnpad.monitoring.utils.Manager;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
+import eu.learnpad.monitoring.glimpse.probe.GlimpseAbstractProbe;
+import eu.learnpad.monitoring.glimpse.utils.DebugMessages;
+import eu.learnpad.monitoring.glimpse.utils.Manager;
 
 public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 

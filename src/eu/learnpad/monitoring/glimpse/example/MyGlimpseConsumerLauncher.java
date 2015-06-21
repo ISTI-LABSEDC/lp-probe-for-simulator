@@ -18,9 +18,9 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   * 
 */
-package eu.learnpad.monitoring.example;
+package eu.learnpad.monitoring.glimpse.example;
 
-import eu.learnpad.monitoring.utils.Manager;
+import eu.learnpad.monitoring.glimpse.utils.Manager;
 
 /**
  * This is a test class that execute the extended class {@link MyGlimpseConsumer}<br />

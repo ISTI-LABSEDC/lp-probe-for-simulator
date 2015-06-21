@@ -18,7 +18,7 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   * 
 */
-package eu.learnpad.monitoring.example;
+package eu.learnpad.monitoring.glimpse.example;
 
 import it.cnr.isti.labse.glimpse.xml.complexEventException.ComplexEventException;
 import it.cnr.isti.labse.glimpse.xml.complexEventResponse.ComplexEventResponse;
@@ -30,8 +30,8 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.ObjectMessage;
 
-import eu.learnpad.monitoring.consumer.GlimpseAbstractConsumer;
-import eu.learnpad.monitoring.utils.Manager;
+import eu.learnpad.monitoring.glimpse.consumer.GlimpseAbstractConsumer;
+import eu.learnpad.monitoring.glimpse.utils.Manager;
 
 /**
  * This class is an example of how to extend the {@link GlimpseAbstractConsumer} class, <br />

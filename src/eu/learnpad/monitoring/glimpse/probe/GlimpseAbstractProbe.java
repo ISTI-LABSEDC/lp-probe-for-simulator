@@ -19,7 +19,7 @@
   * 
 */
 
-package eu.learnpad.monitoring.probe;
+package eu.learnpad.monitoring.glimpse.probe;
 
 import java.util.Properties;
 
@@ -34,11 +34,11 @@ import javax.jms.TopicSession;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import eu.learnpad.monitoring.event.GlimpseBaseEvent;
-import eu.learnpad.monitoring.event.GlimpseBaseEventAbstract;
-import eu.learnpad.monitoring.probe.GlimpseProbe;
-import eu.learnpad.monitoring.utils.DebugMessages;
-import eu.learnpad.monitoring.utils.Manager;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
+import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventAbstract;
+import eu.learnpad.monitoring.glimpse.probe.GlimpseProbe;
+import eu.learnpad.monitoring.glimpse.utils.DebugMessages;
+import eu.learnpad.monitoring.glimpse.utils.Manager;
 
 
 /**

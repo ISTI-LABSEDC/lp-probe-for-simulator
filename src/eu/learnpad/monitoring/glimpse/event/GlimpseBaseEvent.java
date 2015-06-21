@@ -19,7 +19,7 @@
   * 
 */
 
-package eu.learnpad.monitoring.event;
+package eu.learnpad.monitoring.glimpse.event;
 
 /**
  * The GlimpseBaseEvent <T> is the generic basic event that the monitoring infrastructure<br />

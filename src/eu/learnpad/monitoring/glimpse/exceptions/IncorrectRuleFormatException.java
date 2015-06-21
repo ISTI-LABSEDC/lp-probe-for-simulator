@@ -19,7 +19,7 @@
   * 
 */
 
-package eu.learnpad.monitoring.exceptions;
+package eu.learnpad.monitoring.glimpse.exceptions;
 
 /**
  * This exception will be thrown when the Monitoring Manager<br />
