@@ -31,7 +31,7 @@ import eu.learnpad.monitoring.glimpse.utils.Manager;
  * 
  */
 
-public class MyGlimpseConsumerLauncher {
+public class MyGlimpseConsumerBPMNLauncher {
 
 	public static void main(String[] args) {
 		
