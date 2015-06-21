@@ -1,38 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ComplexEventRuleActionList xmlns="http://labse.isti.cnr.it/glimpse/xml/ComplexEventRule">
-  <Insert RuleType="drools">
-    <RuleName>Path-Crossing-Check-0of3</RuleName>
-    <RuleBody>import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
-		import eu.learnpad.monitoring.glimpse.manager.ResponseDispatcher;
-		import eu.learnpad.monitoring.glimpse.utils.NotifierUtils;
-		import eu.learnpad.monitoring.glimpse.rules.DroolsRulesManager;
-
-		declare GlimpseBaseEventBPMN
-			@role( event )
-			@timestamp( timeStamp )
-		end
-
-		rule "Path-Crossing-Check-0of3"
-		no-loop true
-		salience 20
-		dialect "java"
-
-
-		when
-			$0Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Check Application");
-			$1Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Validate elegibility", this after $0Event);
-			$2Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Send rejection letter", this after $1Event);
-
-
-		then 
-			$0Event.setConsumed(true); 
-			update($0Event);
-
-		end</RuleBody>
-  </Insert>
-  <Insert RuleType="drools">
-    <RuleName>Path-Crossing-Check-1of3</RuleName>
-    <RuleBody>import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
+<?xml version="1.0" encoding="UTF-8"?><com:ComplexEventRuleActionList xmlns:com="http://labse.isti.cnr.it/glimpse/xml/ComplexEventRule"><com:Insert RuleType="drools"><com:RuleName>Path-Crossing-Check-1of3</com:RuleName><com:RuleBody>		import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
 		import eu.learnpad.monitoring.glimpse.manager.ResponseDispatcher;
 		import eu.learnpad.monitoring.glimpse.utils.NotifierUtils;
 		import eu.learnpad.monitoring.glimpse.rules.DroolsRulesManager;
@@ -51,21 +17,16 @@
 		when
 			$0Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Check Application");
 			$1Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Validate elegibility", this after $0Event);
-			$2Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Invite for interview", this after $1Event);
-			$3Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Make interview", this after $2Event);
-			$4Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Decide application", this after $3Event);
-			$5Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Send rejection letter", this after $4Event);
+			$2Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Send rejection letter", this after $1Event);
 
 
 		then 
 			$0Event.setConsumed(true); 
 			update($0Event);
 
-		end</RuleBody>
-  </Insert>
-  <Insert RuleType="drools">
-    <RuleName>Path-Crossing-Check-2of3</RuleName>
-    <RuleBody>import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
+		end
+
+	</com:RuleBody></com:Insert><com:Insert RuleType="drools"><com:RuleName>Path-Crossing-Check-2of3</com:RuleName><com:RuleBody>		import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
 		import eu.learnpad.monitoring.glimpse.manager.ResponseDispatcher;
 		import eu.learnpad.monitoring.glimpse.utils.NotifierUtils;
 		import eu.learnpad.monitoring.glimpse.rules.DroolsRulesManager;
@@ -87,6 +48,37 @@
 			$2Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Invite for interview", this after $1Event);
 			$3Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Make interview", this after $2Event);
 			$4Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Decide application", this after $3Event);
+			$5Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Send rejection letter", this after $4Event);
+
+
+		then 
+			$0Event.setConsumed(true); 
+			update($0Event);
+
+		end
+
+	</com:RuleBody></com:Insert><com:Insert RuleType="drools"><com:RuleName>Path-Crossing-Check-3of3</com:RuleName><com:RuleBody>		import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
+		import eu.learnpad.monitoring.glimpse.manager.ResponseDispatcher;
+		import eu.learnpad.monitoring.glimpse.utils.NotifierUtils;
+		import eu.learnpad.monitoring.glimpse.rules.DroolsRulesManager;
+
+		declare GlimpseBaseEventBPMN
+			@role( event )
+			@timestamp( timeStamp )
+		end
+
+		rule "Path-Crossing-Check-3of3"
+		no-loop true
+		salience 20
+		dialect "java"
+
+
+		when
+			$0Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Check Application");
+			$1Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Validate elegibility", this after $0Event);
+			$2Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Invite for interview", this after $1Event);
+			$3Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Make interview", this after $2Event);
+			$4Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Decide application", this after $3Event);
 			$5Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Determine fee", this after $4Event);
 			$6Event : GlimpseBaseEventBPMN(this.isConsumed == false, this.isException == false, this.getEventName == "Send acceptance letter", this after $5Event);
 
@@ -95,6 +87,6 @@
 			$0Event.setConsumed(true); 
 			update($0Event);
 
-		end</RuleBody>
-  </Insert>
-</ComplexEventRuleActionList>
+		end
+
+	</com:RuleBody></com:Insert></com:ComplexEventRuleActionList>
