@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.glimpse.event;
+package eu.learnpad.simulator.mon.event;
 
 public class GlimpseBaseEventArduino<T> extends GlimpseBaseEventAbstract<T> {
 

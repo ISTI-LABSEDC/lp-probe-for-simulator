@@ -20,19 +20,21 @@
   * 
 */
 
-package eu.learnpad.monitoring.glimpse.example;
+package eu.learnpad.simulator.mon.example;
 
 import java.net.UnknownHostException;
 import java.util.Properties;
+import java.util.Vector;
 
 import javax.jms.JMSException;
 import javax.naming.NamingException;
 
-import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
-import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEventBPMN;
-import eu.learnpad.monitoring.glimpse.probe.GlimpseAbstractProbe;
-import eu.learnpad.monitoring.glimpse.utils.DebugMessages;
-import eu.learnpad.monitoring.glimpse.utils.Manager;
+import eu.learnpad.simulator.mon.coverage.Learner;
+import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
+import eu.learnpad.simulator.mon.event.GlimpseBaseEventBPMN;
+import eu.learnpad.simulator.mon.probe.GlimpseAbstractProbe;
+import eu.learnpad.simulator.mon.utils.DebugMessages;
+import eu.learnpad.simulator.mon.utils.Manager;
 
 public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 
@@ -94,6 +96,10 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 		try {
 			
 			for (int i = 0; i<1000;i++) {
+				Vector<Learner> usersInvolved = new Vector<>();
+				usersInvolved.add(new Learner(1,12,"testName1", "testSurname1"));
+				usersInvolved.add(new Learner(2,24,"testName2", "testSurname2"));
+				
 				message = new GlimpseBaseEventBPMN<String>(
 						data,
 						"aGenericProbe",
@@ -102,8 +108,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 						false,
 						"ExtraField",
 						"sessionID_Field",
-						"assigneeID_Field",
-						"roleID Field",
+						usersInvolved,
 						"taskID_Field",
 						"subProcessID_Field",
 						"desideredCompletionTime"
@@ -118,8 +123,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 								+ "timestamp: " + message.getTimeStamp() + "\n"
 								+ "extraField: " + message.getExtraDataField() + "\n"
 								+ "sessionID_Field: " + message.getSessionID() + "\n"
-								+ "assigneeID_Field: " + message.getAssigneeID() + "\n"
-								+ "roleID_Field: " + message.getRoleID() + "n"
+								+ "usersInvolvedSize: " + message.getUsersInvolved()+ "\n"
 								+ "taskID_Field: " + message.getTaskID() + "\n"
 								+ "subProcessID_Field: " + message.getSubProcessID() + "\n"
 								+ "desideredCompletionTime: " + message.getDesideredCompletionTime()

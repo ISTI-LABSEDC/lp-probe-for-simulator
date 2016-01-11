@@ -19,24 +19,22 @@
   * 
 */
 
-package eu.learnpad.monitoring.glimpse.exceptions;
+package eu.learnpad.simulator.mon.exceptions;
 
 /**
  * This exception will be thrown when the Monitoring Manager<br />
- * is unable to complete the request of unloading a rule.
+ * will receive an invalid rule.<br />
+ * The rule is contained into the field RuleBody of the ComplexEventRuleDocument object
  * 
  * @author Antonello Calabr&ograve;
  * @version 3.2
  */
 
-public class UnknownRuleException extends Exception {
+public class IncorrectRuleFormatException extends Exception {
+	private static final long serialVersionUID = -2577929182751048650L;
 
-	private static final long serialVersionUID = -8325934056030280854L;
-
-	public UnknownRuleException()
+	public IncorrectRuleFormatException()
 	{
-		System.out.println("Unable to found a rule with provided ruleName");
+		System.out.println("Check rule format, may contains errors");
 	}
-	
-	
 }

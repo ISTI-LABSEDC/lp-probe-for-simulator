@@ -18,21 +18,23 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   * 
 */
-package eu.learnpad.monitoring.glimpse.probe;
 
-import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
+package eu.learnpad.simulator.mon.exceptions;
 
 /**
+ * This exception will be thrown when the Monitoring Manager<br />
+ * is unable to find the ID of the Consumer that send a evaluation request.
  * 
- * The interface {@link GlimpseProbe} contains the event that a generic probe<br />
- * must implement to generate events.
- * 
- *  The behaviour of a Probe is defined in {@link GlimpseAbstractProbe}
- * 
- * @author acalabro
- *
+ * @author Antonello Calabr&ograve;
+ * @version 3.2
  */
-public interface GlimpseProbe {
 
-	void sendMessage(GlimpseBaseEvent<?> event, boolean debug);
+public class UnknownConsumerIDException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	public UnknownConsumerIDException()
+	{
+		System.out.println("Check request ID, may contains errors");
+	}
 }

@@ -18,9 +18,9 @@
   * along with this program.  If not, see <http://www.gnu.org/licenses/>.
   * 
 */
-package eu.learnpad.monitoring.glimpse.probe;
+package eu.learnpad.simulator.mon.probe;
 
-import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
+import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
 
 /**
  * 

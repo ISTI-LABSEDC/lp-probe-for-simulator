@@ -1,4 +1,4 @@
-package eu.learnpad.monitoring.glimpse.utils;
+package eu.learnpad.simulator.mon.utils;
 
 /**
  * This class provides print function for debug

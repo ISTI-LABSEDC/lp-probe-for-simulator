@@ -19,11 +19,11 @@
   * 
 */
 
-package eu.learnpad.monitoring.glimpse.event;
+package eu.learnpad.simulator.mon.event;
 
 import java.io.Serializable;
 
-import eu.learnpad.monitoring.glimpse.event.GlimpseBaseEvent;
+import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
 
 /**
  * 
