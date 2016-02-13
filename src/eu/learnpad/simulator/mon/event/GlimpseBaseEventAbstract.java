@@ -35,15 +35,12 @@ import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
  */
 public abstract class GlimpseBaseEventAbstract<T> implements GlimpseBaseEvent<T>, Serializable
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 431412878795449197L;
 	protected T data;
 	protected Long timeStamp;
 	protected String eventName;
 	protected boolean isException;
-	protected boolean consumed;
+	private boolean consumed;
 
 	public GlimpseBaseEventAbstract(T data, Long timeStamp,	String eventName, boolean isException) {
 		

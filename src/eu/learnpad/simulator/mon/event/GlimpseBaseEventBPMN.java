@@ -1,15 +1,12 @@
 package eu.learnpad.simulator.mon.event;
 
-import java.util.Vector;
-
-import eu.learnpad.simulator.mon.coverage.Learner;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEventGeneric;
 
 public class GlimpseBaseEventBPMN<T> extends GlimpseBaseEventGeneric<String> {
 
 	private static final long serialVersionUID = 1L;
 	public String sessionID;
-	public Vector<Learner> usersInvolved = new Vector<Learner>();
+	public int assigneeID;
 	public String taskID;
 	public String subProcessID;
 	public String desideredCompletionTime;
@@ -17,13 +14,13 @@ public class GlimpseBaseEventBPMN<T> extends GlimpseBaseEventGeneric<String> {
 	public GlimpseBaseEventBPMN(
 			String data, String probeID, Long timeStamp,
 			String eventName, boolean isException, String extraDataField, 
-			String sessionID, Vector<Learner> usersInvolved, String taskID,
+			String sessionID, int assigneeID, String taskID,
 			String subProcessID, String desideredCompletionTime) {
 		
 		super(data, probeID, timeStamp, eventName, isException, extraDataField);
 		
 		this.sessionID = sessionID;
-		this.usersInvolved = usersInvolved;		
+		this.assigneeID = assigneeID;		
 		this.taskID = taskID;
 		this.subProcessID = subProcessID;
 		this.desideredCompletionTime = desideredCompletionTime;
@@ -45,12 +42,12 @@ public class GlimpseBaseEventBPMN<T> extends GlimpseBaseEventGeneric<String> {
 		this.sessionID = sessionID;
 	}
 	
-	public Vector<Learner> getUsersInvolved() {
-		return this.usersInvolved;
+	public int getAssigneeID() {
+		return this.assigneeID;
 	}
 	
-	public void setUsersInvolved(Vector<Learner> usersInvolved) {
-		this.usersInvolved = usersInvolved;
+	public void setAssigneeID(int assigneeID) {
+		this.assigneeID = assigneeID;
 	}
 	
 	public String getTaskID() {
