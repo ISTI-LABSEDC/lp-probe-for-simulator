@@ -31,6 +31,8 @@ import javax.naming.NamingException;
 
 import org.apache.commons.net.ntp.TimeStamp;
 
+import eu.learnpad.sim.rest.event.AbstractEvent;
+import eu.learnpad.sim.rest.event.impl.SessionScoreUpdateEvent;
 import eu.learnpad.simulator.mon.coverage.Learner;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEventBPMN;
@@ -97,6 +99,8 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 		DebugMessages.line();
 		try {
 			
+			AbstractEvent theEvent = new SessionScoreUpdateEvent();
+			
 			for (int i = 0; i<1000;i++) {
 				Vector<Learner> usersInvolved = new Vector<>();
 				usersInvolved.add(new Learner(1,12,"testName1", "testSurname1"));
@@ -108,16 +112,11 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 						System.currentTimeMillis(),
 						"EventGeneratedFromActivitiEngineSimulated",
 						false,
-						"ExtraField",
-						"sessionID_Field",
-						usersInvolved,
-						"taskID_Field",
-						"subProcessID_Field",
-						"desideredCompletionTime"
+						"ExtraField", theEvent						
 						);
 				
 				this.sendEventMessage(message, false);
-				DebugMessages.println(
+				DebugMessages.println(TimeStamp.getCurrentTime(), 
 						MyGlimpseProbe_BPMN_LearnPAd.class.getName(),
 						"GlimpseBaseEventBPMN message sent: {\n"
 								+ "eventName: " + message.getEventName() + "\n"
@@ -126,9 +125,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 								+ "extraField: " + message.getExtraDataField() + "\n"
 								+ "sessionID_Field: " + message.event.simulationsessionid + "\n"
 								+ "usersInvolvedSize: " + message.event.involvedusers+ "\n"
-								+ "taskID_Field: " + message.event. + "\n"
-								+ "subProcessID_Field: " + message.getSubProcessID() + "\n"
-								+ "desideredCompletionTime: " + message.getDesideredCompletionTime()
+								+ "eventType: " + message.event.type
 								+"}");
 				DebugMessages.line();
 				Thread.sleep(sendingInterval);

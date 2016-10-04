@@ -30,6 +30,33 @@
 			<artifactId>activemq-all</artifactId>
 			<version>5.7.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+<dependency>
+    <groupId>commons-net</groupId>
+    <artifactId>commons-net</artifactId>
+    <version>3.0.1</version>
+</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
+			<version>5.5.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-decisiontables</artifactId>
+			<version>5.5.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-verifier</artifactId>
+			<version>5.5.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-persistence-jpa</artifactId>
+			<version>5.5.0.Final</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.jms</groupId>
 			<artifactId>javax.jms-api</artifactId>
