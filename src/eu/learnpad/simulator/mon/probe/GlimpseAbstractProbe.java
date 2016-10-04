@@ -34,6 +34,8 @@ import javax.jms.TopicSession;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
+import org.apache.commons.net.ntp.TimeStamp;
+
 import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEventAbstract;
 import eu.learnpad.simulator.mon.probe.GlimpseProbe;
@@ -93,29 +95,29 @@ public abstract class GlimpseAbstractProbe implements GlimpseProbe {
 	protected TopicPublisher createConnection(InitialContext initConn, String probeChannel, Properties settings, boolean debug) throws NamingException, JMSException
 	{
 		if (debug)
-			DebugMessages.print(this.getClass().getSimpleName(),
+			DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 					"Creating ConnectionFactory with settings ");
 		TopicConnectionFactory connFact = (TopicConnectionFactory)initConn.lookup(settings.getProperty("connectionFactoryNames"));
 		if (debug) {
 			DebugMessages.ok();  
-			DebugMessages.print(this.getClass().getSimpleName(),
+			DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 						"Creating TopicConnection "); }
 			connection = connFact.createTopicConnection();
 			if (debug) {
 			DebugMessages.ok();
 			DebugMessages.line(); }
 			if (debug) {
-				DebugMessages.print(this.getClass().getSimpleName(),
+				DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 						"Creating Session "); }
 			publishSession = connection.createTopicSession(false,Session.AUTO_ACKNOWLEDGE);
 			if (debug) {
 				DebugMessages.ok();
-				DebugMessages.print(this.getClass().getSimpleName(),
+				DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 						"Looking up for channel ");}
 			connectionTopic = (Topic) initContext.lookup(probeChannel);
 			if (debug) {
 				DebugMessages.ok();
-				DebugMessages.print(this.getClass().getSimpleName(),
+				DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 						"Creating Publisher "); }
 			return tPub = publishSession.createPublisher(connectionTopic);
 	}
@@ -130,7 +132,7 @@ public abstract class GlimpseAbstractProbe implements GlimpseProbe {
 	 */
 	protected InitialContext initConnection(Properties settings, boolean debug) throws NamingException {
 		if (debug)
-		DebugMessages.print(this.getClass().getSimpleName(),
+		DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 				"Creating InitialContext with settings ");
 		InitialContext initConn = new InitialContext(settings);
 		if (debug) {
@@ -153,7 +155,7 @@ public abstract class GlimpseAbstractProbe implements GlimpseProbe {
 	protected void sendEventMessage(GlimpseBaseEventAbstract<?> event, boolean debug) throws JMSException,
 			NamingException {
 		if (debug) {
-			DebugMessages.print(this.getClass().getSimpleName(),
+			DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 					"Creating Message "); }
 		try 
 		{
@@ -162,7 +164,7 @@ public abstract class GlimpseAbstractProbe implements GlimpseProbe {
 			messageToSend.setObject(event);		
 		if (debug) {
 			DebugMessages.ok();
-			DebugMessages.print(this.getClass().getSimpleName(),
+			DebugMessages.print(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(),
 					"Publishing message  "); }
 		tPub.publish(messageToSend);	
 		if (debug) {

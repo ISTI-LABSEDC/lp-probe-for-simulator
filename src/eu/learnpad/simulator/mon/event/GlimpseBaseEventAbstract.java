@@ -23,8 +23,6 @@ package eu.learnpad.simulator.mon.event;
 
 import java.io.Serializable;
 
-import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
-
 /**
  * 
  * This class is a possible implementation (extension) of the {@link GlimpseBaseEvent} class.<br /><br /> 

@@ -21,6 +21,10 @@
 
 package eu.learnpad.simulator.mon.exceptions;
 
+import org.apache.commons.net.ntp.TimeStamp;
+
+import eu.learnpad.simulator.mon.utils.DebugMessages;
+
 /**
  * This exception will be thrown when the Monitoring Manager<br />
  * is unable to find the ID of the Consumer that send a evaluation request.
@@ -35,6 +39,6 @@ public class UnknownConsumerIDException extends Exception {
 
 	public UnknownConsumerIDException()
 	{
-		System.out.println("Check request ID, may contains errors");
+		DebugMessages.println(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(), "Check request ID, may contains errors");
 	}
 }

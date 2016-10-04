@@ -21,6 +21,11 @@
 
 package eu.learnpad.simulator.mon.exceptions;
 
+import org.apache.commons.net.ntp.TimeStamp;
+import org.drools.builder.KnowledgeBuilderErrors;
+
+import eu.learnpad.simulator.mon.utils.DebugMessages;
+
 /**
  * This exception will be thrown when the Monitoring Manager<br />
  * will receive an invalid rule.<br />
@@ -33,8 +38,11 @@ package eu.learnpad.simulator.mon.exceptions;
 public class IncorrectRuleFormatException extends Exception {
 	private static final long serialVersionUID = -2577929182751048650L;
 
-	public IncorrectRuleFormatException()
+	public IncorrectRuleFormatException(KnowledgeBuilderErrors knowledgeBuilderErrors)
 	{
-		System.out.println("Check rule format, may contains errors");
+		for (int i = 0; i<knowledgeBuilderErrors.size(); i++) {
+			DebugMessages.println(TimeStamp.getCurrentTime(), this.getClass().getSimpleName(), knowledgeBuilderErrors.toArray()[i].toString());	
+		}
+		
 	}
 }

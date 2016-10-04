@@ -29,6 +29,8 @@ import java.util.Vector;
 import javax.jms.JMSException;
 import javax.naming.NamingException;
 
+import org.apache.commons.net.ntp.TimeStamp;
+
 import eu.learnpad.simulator.mon.coverage.Learner;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEvent;
 import eu.learnpad.simulator.mon.event.GlimpseBaseEventBPMN;
@@ -54,7 +56,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 	public static void main(String[] args) throws UnknownHostException {
 
 		DebugMessages.line();
-		DebugMessages.println(MyGlimpseProbe_BPMN_LearnPAd.class.getName(),
+		DebugMessages.println(TimeStamp.getCurrentTime(), MyGlimpseProbe_BPMN_LearnPAd.class.getName(),
 				"\nONE EVENT CONTAINING BPMN SIMULATED PARAMETER WILL BE SENT EACH 10 SECONDS\n"
 				+ "TO SPECIFY A DIFFERENT RATE, PROVIDE AN ARG IN MILLISECONDS\n"
 				+ "USAGE: java -jar MyGlimpseProbe_BPMN.jar [amountOfMilliseconds]");
@@ -75,7 +77,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 								false,
 								"probeName", "probeTopic"));
 		
-		DebugMessages.println(
+		DebugMessages.println(TimeStamp.getCurrentTime(), 
 				MyGlimpseProbe_BPMN_LearnPAd.class.getName(),
 				"Starting infinite loop");
 		
@@ -89,7 +91,7 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 	
 	private void generateAndSendExample_GlimpseBaseEvents_StringPayload(String data, int sendingInterval) throws UnknownHostException {
 		DebugMessages.ok();
-		DebugMessages.print(MyGlimpseProbe_BPMN_LearnPAd.class.getName(),"Creating GlimpseBaseEventBPMN message");
+		DebugMessages.print(TimeStamp.getCurrentTime(), MyGlimpseProbe_BPMN_LearnPAd.class.getName(),"Creating GlimpseBaseEventBPMN message");
 		GlimpseBaseEventBPMN<String> message;
 		DebugMessages.ok();
 		DebugMessages.line();
@@ -122,9 +124,9 @@ public class MyGlimpseProbe_BPMN_LearnPAd extends GlimpseAbstractProbe {
 								+ "eventData: " + message.getEventData() + "\n"
 								+ "timestamp: " + message.getTimeStamp() + "\n"
 								+ "extraField: " + message.getExtraDataField() + "\n"
-								+ "sessionID_Field: " + message.getSessionID() + "\n"
-								+ "usersInvolvedSize: " + message.getUsersInvolved()+ "\n"
-								+ "taskID_Field: " + message.getTaskID() + "\n"
+								+ "sessionID_Field: " + message.event.simulationsessionid + "\n"
+								+ "usersInvolvedSize: " + message.event.involvedusers+ "\n"
+								+ "taskID_Field: " + message.event. + "\n"
 								+ "subProcessID_Field: " + message.getSubProcessID() + "\n"
 								+ "desideredCompletionTime: " + message.getDesideredCompletionTime()
 								+"}");
